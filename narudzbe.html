@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Narudžbe - Ruđerovci</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Mobilna Navigacija (skrivena na desktopu) -->
+  <nav class="nav nav-mobile">
+    <!-- Logo je uklonjen iz mobilne navigacije -->
+    <a href="#" class="nav__hamburger nav-mobile__hamburger">
+        <span class="nav__hamburger__line"></span>
+        <span class="nav__hamburger__line"></span>
+        <span class="nav__hamburger__line"></span>
+    </a>
+    <div class="nav__menu nav-mobile__menu">
+        <ul>
+            <li class="nav__menu__link"><a href="index.html">Početna</a></li>
+            <li class="nav__menu__link"><a href="narudzbe.html" class="active">Narudžbe</a></li>
+            <li class="nav__menu__link"><a href="povijest.html">Naša povijest</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <!-- Desktop Layout -->
+  <div class="wrapper">
+    <aside>
+      <nav class="nav"> <!-- Desktop Sidebar Navigacija -->
+        <div class="nav__logo"><img src="Slike/logo2.png" alt="Logo" class="nav-logo-img"> Ruđerovci</div>
+        <a href="#" class="nav__hamburger">
+          <span class="nav__hamburger__line"></span>
+          <span class="nav__hamburger__line"></span>
+          <span class="nav__hamburger__line"></span>
+        </a>
+        <div class="nav__menu">
+          <ul>
+            <li class="nav__menu__link"><a href="index.html">Početna</a></li>
+            <li class="nav__menu__link"><a href="narudzbe.html" class="active">Narudžbe</a></li>
+            <li class="nav__menu__link"><a href="povijest.html">Naša povijest</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+    <div class="main-content-area">
+      <main class="fade-in">
+        <h2>Izvršite svoju narudžbu</h2>
+        <form action="https://formspree.io/f/xrbqenpe" method="POST">
+          <label for="ime">Ime i prezime:</label>
+          <input type="text" id="ime" name="ime" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="proizvod">Odaberite proizvod:</label>
+          <select id="proizvod" name="proizvod">
+            <option>Smrznuti bijeli kruh</option>
+            <option>Integralni kruh</option>
+            <option>Peciva s punjenjem</option>
+            <option>Kroasani</option>
+          </select>
+          <label for="kolicina">Količina:</label>
+          <input type="number" id="kolicina" name="kolicina" min="1" required>
+          <label for="adresa">Adresa za dostavu:</label>
+          <textarea id="adresa" name="adresa" required></textarea>
+          <label for="napomena">Dodatna napomena:</label>
+          <textarea id="napomena" name="message"></textarea>
+          <button type="submit">Pošalji narudžbu</button>
+        </form>
+      </main>
+    </div> <!-- kraj .main-content-area -->
+  </div> <!-- kraj .wrapper -->
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Ruđerovci. Sva prava pridržana.</p>
+  </footer>
+</body>
+</html>

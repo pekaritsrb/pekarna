@@ -1,0 +1,498 @@
+/* ==========================================================================
+   Global Resets & Base Styles
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* Base font size */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Light gray background for the whole page */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #d2691e; /* Bakery primary color for links */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   Layout Structure
+   ========================================================================== */
+.wrapper { /* Used on index.html for sidebar layout */
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1; /* Takes up available vertical space */
+}
+
+.main-content-area { /* Container for header and main content next to sidebar */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allows scrolling for main content if it overflows */
+    padding-bottom: 70px; /* Space for the fixed footer */
+}
+
+/* ==========================================================================
+   Header (Main page header, not navigation header)
+   ========================================================================== */
+header.page-header, /* Generic class for main page headers */
+.main-content-area > header { /* Header on index.html */
+    background-color: #d2691e;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+header.page-header .logo,
+.main-content-area > header .logo {
+    height: 80px;
+    margin: 0 auto 15px auto; /* Centered logo */
+}
+
+header.page-header h1,
+.main-content-area > header h1 {
+    margin-bottom: 5px;
+    font-size: 2.2em;
+}
+
+header.page-header .slogan,
+.main-content-area > header .slogan {
+    font-style: italic;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Main Content Area
+   ========================================================================== */
+main {
+    padding: 25px 20px;
+    background-color: #ffffff; /* White background for content sections */
+    flex-grow: 1; /* Ensures main takes up space before footer */
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Slightly off-white for sections */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    color: #d2691e;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    position: fixed; /* Fixed at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures footer is above other content */
+}
+
+/* ==========================================================================
+   Navigation (.nav class) - Common Styles
+   ========================================================================== */
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Default for top navigation */
+    border-bottom: 1px solid #e0e0e0; /* Subtle separator */
+    position: relative; /* For potential dropdowns or hamburger positioning */
+    z-index: 900;
+}
+
+.nav__logo {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #333; /* Dark text for logo on light background */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%; /* Circular logo image */
+    object-fit: cover;
+}
+
+.nav__hamburger {
+    display: none; /* Hidden by default, shown via media query */
+    cursor: pointer;
+    margin-left: auto; /* Pushes hamburger to the right if menu is hidden */
+}
+
+.nav__hamburger__line {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav__menu {
+    margin-left: auto; /* Pushes menu to the right for top nav */
+}
+
+.nav__menu ul {
+    display: flex; /* Horizontal layout for top nav */
+    gap: 10px;
+}
+
+.nav__menu__link a {
+    padding: 10px 15px;
+    font-weight: 500;
+    color: #555;
+    border-radius: 5px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    display: block;
+}
+
+.nav__menu__link a:hover,
+.nav__menu__link a.active { /* For top navigation */
+    background-color: #f0f0f0;
+    color: #d2691e;
+}
+
+/* ==========================================================================
+   Aside (Sidebar) Navigation - Specific Styles
+   ========================================================================== */
+aside {
+    flex: 0 0 240px; /* Fixed width for the sidebar */
+    background-color: #2c3e50; /* Dark blue/gray for sidebar */
+    color: #ecf0f1; /* Light text color for sidebar */
+    display: flex; /* To allow .nav to fill height */
+    flex-direction: column;
+}
+
+aside .nav {
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    padding: 20px 15px; /* Padding inside the sidebar nav */
+    background-color: transparent; /* Inherits from aside */
+    border-bottom: none;
+    height: 100%; /* Fill the height of aside */
+}
+
+aside .nav__logo {
+    color: #ecf0f1; /* Light logo text */
+    width: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #34495e; /* Slightly darker separator */
+    font-size: 1.4em; /* Slightly smaller logo in sidebar */
+}
+
+aside .nav-logo-img {
+    height: 35px;
+    width: 35px;
+}
+
+aside .nav__menu {
+    width: 100%;
+    margin-left: 0; /* Reset margin */
+}
+
+aside .nav__menu ul {
+    flex-direction: column; /* Vertical links */
+    width: 100%;
+    gap: 5px; /* Space between links */
+}
+
+aside .nav__menu__link a {
+    color: #bdc3c7; /* Lighter gray for links */
+    padding: 10px 15px; /* Slightly reduced padding */
+    font-weight: 400;
+    position: relative;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+aside .nav__menu__link a:hover,
+aside .nav__menu__link a.active {
+    background-color: #34495e; /* Darker background on hover/active */
+    color: #ffffff; /* White text */
+    padding-left: 22px; /* Indent text */
+}
+
+aside .nav__menu__link a:hover::before,
+aside .nav__menu__link a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0; /* Full height */
+    margin: auto 0; /* Vertical centering if height is not 100% */
+    height: 100%;
+    width: 5px;
+    background-color: #d2691e; /* Accent color bar */
+    border-radius: 0 3px 3px 0; /* Rounded on the right */
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px; /* Limit form width */
+    margin: 0 auto; /* Center form in its container */
+}
+
+form label {
+    font-weight: 500;
+    margin-bottom: -10px; /* Pull label closer to input */
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form button,
+button.btn { /* General button styling */
+    background-color: #d2691e;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+form button:hover,
+button.btn:hover {
+    background-color: #a0522d; /* Darker shade on hover */
+}
+
+form button:active,
+button.btn:active {
+    transform: scale(0.98); /* Slight press effect */
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* ==========================================================================
+   Media Queries (Placeholder for responsiveness)
+   ========================================================================== */
+/*
+@media (max-width: 768px) {
+    .nav__menu {
+        display: none; // Hide menu on small screens
+        // Further styles to make it a dropdown or off-canvas
+    }
+    .nav__hamburger {
+        display: block; // Show hamburger
+    }
+    aside {
+        // Behavior for sidebar on small screens, e.g., hide or make it overlay
+    }
+    .wrapper {
+        flex-direction: column; // Stack sidebar and content
+    }
+}
+*/
+
+/* ==========================================================================
+   Media Queries (Responsive Navigation)
+   ========================================================================== */
+   @media (max-width: 768px) {
+    /* Layout promjene */
+    .wrapper {
+        flex-direction: column; /* Stacks aside (nav) and main-content-area */
+    }
+
+    aside {
+        flex: 0 0 auto; /* Sidebar više nije fiksne širine, prilagođava se sadržaju */
+        width: 100%;
+        height: auto; /* Visina se prilagođava sadržaju */
+        background-color: #ffffff; /* Svijetla pozadina kao za gornju traku */
+        color: #333; 
+        position: sticky; /* Navigacija ostaje na vrhu pri skrolanju */
+        top: 0;
+        /* left: 0; nije nužno za sticky ako je width: 100% */
+        z-index: 1001; /* Malo viši z-index od footera */
+        /* --- DEBUG STYLES --- */
+        /* border: 2px solid red !important; */ /* Privremeno za provjeru vidljivosti */
+    }
+
+    aside .nav {
+        flex-direction: row; /* Vraća navigaciju u horizontalni mod */
+        align-items: center;
+        padding: 0 15px; /* Prilagođen padding za gornju traku */
+        min-height: 60px; /* Fiksna minimalna visina za gornju traku */
+        border-bottom: 1px solid #e0e0e0; /* Standardna granica */
+    }
+
+    aside .nav__logo {
+        color: #333; /* Tamni tekst loga */
+        font-size: 1.6em; /* Veličina kao za gornju traku */
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+
+    aside .nav-logo-img {
+        height: 35px; /* Prilagođena veličina za gornju traku */
+        width: 35px; 
+    }
+
+    /* Hamburger meni */
+    .nav__hamburger {
+        display: flex; /* Prikazujemo hamburger */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px; /* Visina hamburgera */
+        margin-left: auto; /* Gura ga desno */
+        cursor: pointer;
+        order: 3; /* Da bude nakon loga i potencijalno menija */
+        z-index: 1002; /* Osigurava da je hamburger iznad svega unutar nav */
+        /* --- DEBUG STYLES --- */
+        /* background-color: yellow !important; */ /* Privremeno za provjeru vidljivosti */
+    }
+
+    .nav__hamburger__line {
+        width: 100%;
+        height: 3px;
+        background-color: #333; /* Boja linija hamburgera */
+        border-radius: 2px;
+        transition: all 0.3s linear;
+    }
+
+    aside .nav__menu {
+        display: none; /* Sakrivamo meni po defaultu */
+        position: absolute;
+        top: 60px; /* Ispod navigacijske trake (visina .nav) */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        padding: 0;
+        z-index: 1001; /* Treba biti iznad sadržaja, ali ispod hamburgera ako je otvoren preko njega */
+    }
+
+    aside .nav__menu.nav-menu--open { /* Klasa koju dodaje JS */
+        display: block;
+    }
+
+    aside .nav__menu ul {
+        flex-direction: column; /* Linkovi se slažu vertikalno */
+        width: 100%;
+        gap: 0;
+    }
+
+    aside .nav__menu__link a {
+        color: #555; /* Standardna boja linka za gornju traku */
+        padding: 15px 20px; /* Veći padding za lakši dodir */
+        border-bottom: 1px solid #f0f0f0; /* Separator između linkova */
+        display: block; /* Da zauzme punu širinu */
+    }
+    aside .nav__menu__link:last-child a {
+        border-bottom: none;
+    }
+
+    aside .nav__menu__link a:hover,
+    aside .nav__menu__link a.active {
+        background-color: #f0f0f0; /* Standardni hover za gornju traku */
+        color: #d2691e;
+        padding-left: 20px; /* Održavamo padding */
+    }
+
+    aside .nav__menu__link a::before {
+        display: none; /* Sakrivamo lijevu traku od bočne navigacije na mobitelu */
+    }
+
+    .main-content-area {
+        /* margin-top: 60px; Nije potrebno ako je aside sticky i dio normalnog toka */
+        padding-top: 0; /* Resetiramo padding ako je bio dodan */ 
+    }
+
+    /* Ako je footer fiksan, možda ga treba prilagoditi na mobitelu */
+    /* footer { position: static; } */
+}
+
+/* Mobilna navigacija - skrivena po defaultu (na desktopu) */
+.nav-mobile {
+    display: none;
+}
+@media (max-width: 768px) {
+
+    /* Sakrivamo desktop sidebar navigaciju (unutar .wrapper > aside) */
+    .wrapper aside {
+        display: none;
+    }
+
+    /* Prikazujemo mobilnu navigaciju (.nav-mobile) */
+    .nav-mobile {
+        display: flex; /* Ili block, ovisno o tome kako želiš da se elementi unutar nje ponašaju */
+        /* ... ostali stilovi za .nav-mobile koje smo već definirali ... */
+    }
+
+    /* ... ostali stilovi za elemente unutar .nav-mobile ... */
+}

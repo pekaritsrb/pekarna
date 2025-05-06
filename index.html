@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruđerovci - Početna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Mobilna Navigacija (skrivena na desktopu) -->
+    <nav class="nav nav-mobile">
+        <!-- Logo je uklonjen iz mobilne navigacije -->
+        <a href="#" class="nav__hamburger nav-mobile__hamburger">
+            <span class="nav__hamburger__line"></span>
+            <span class="nav__hamburger__line"></span>
+            <span class="nav__hamburger__line"></span>
+        </a>
+        <div class="nav__menu nav-mobile__menu">
+            <ul>
+                <li class="nav__menu__link"><a href="index.html" class="active">Početna</a></li>
+                <li class="nav__menu__link"><a href="narudzbe.html">Narudžbe</a></li>
+                <li class="nav__menu__link"><a href="povijest.html">Naša povijest</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Desktop Layout -->
+    <div class="wrapper">
+        <aside>
+            <nav class="nav"> <!-- Desktop Sidebar Navigacija -->
+                <div class="nav__logo"><img src="Slike/logo2.png" alt="Logo" class="nav-logo-img"> Ruđerovci</div>
+                <a href="#" class="nav__hamburger"> <!-- Ovaj hamburger je za desktop, može se sakriti ako nije potreban -->
+                  <span class="nav__hamburger__line"></span>
+                  <span class="nav__hamburger__line"></span>
+                  <span class="nav__hamburger__line"></span>
+                </a>
+                <div class="nav__menu">
+                  <ul>
+                    <li class="nav__menu__link"><a href="index.html" class="active">Početna</a></li>
+                    <li class="nav__menu__link"><a href="narudzbe.html">Narudžbe</a></li>
+                    <li class="nav__menu__link"><a href="povijest.html">Naša povijest</a></li>
+                  </ul>
+                </div>
+            </nav>
+        </aside>
+        <div class="main-content-area">
+            <header class="fade-in">
+                <img src="Slike/logo.png" alt="Ruđerovci logo" class="logo page-header-logo">
+                <h1>Ruđerovci</h1>
+                <p class="slogan">Topao kruh, toplo srce.</p>
+                <div id="navigacija"></div> <!-- Ovaj div je vjerojatno ostatak, može se ukloniti ako nema svrhu -->
+            </header>
+            
+            <main class="fade-in">
+                <section>
+                    <h2>Dobrodošli u pekaru Ruđerovci</h2>
+                    <p>Specijalizirani smo za smrznute pekarske proizvode koji čuvaju svježinu i okus pravog domaćeg kruha.</p>
+                </section>
+                <section>
+                    <h2>Naša ponuda</h2>
+                    <ul>
+                        <li>Smrznuti bijeli kruh</li>
+                        <li>Integralni kruh</li>
+                        <li>Peciva s punjenjem</li>
+                        <li>Kroasani</li>
+                    </ul>
+                </section>
+            </main>
+        
+        </div> <!-- kraj .main-content-area -->
+    </div> <!-- kraj .wrapper -->
+
+    <footer class="fade-in">
+        <p>&copy; 2025 Ruđerovci. Sva prava pridržana.</p>
+    </footer>
+</body>
+</html>
