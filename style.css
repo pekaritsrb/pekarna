@@ -58,32 +58,39 @@ ul {
 
 /* ==========================================================================
    Header (Main page header, not navigation header)
+   Specifično za index.html header unutar .main-content-area
    ========================================================================== */
-header.page-header, /* Generic class for main page headers */
 .main-content-area > header { /* Header on index.html */
-    background-color: #d2691e;
+    background: linear-gradient(135deg, #d2691e 0%, #a0522d 100%); /* Topli gradijent */
     color: white;
-    padding: 25px 20px;
+    padding: 40px 20px; /* Više paddinga */
     text-align: center;
+    border-bottom: 5px solid #8c4616; /* Tamnija donja granica */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-header.page-header .logo,
 .main-content-area > header .logo {
-    height: 80px;
-    margin: 0 auto 15px auto; /* Centered logo */
+    height: 90px; /* Malo veći logo */
+    margin: 0 auto 20px auto; /* Centriran logo s više margine */
+    background-color: rgba(255, 255, 255, 0.1); /* Suptilna pozadina za logo */
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
-header.page-header h1,
 .main-content-area > header h1 {
-    margin-bottom: 5px;
-    font-size: 2.2em;
+    margin-bottom: 10px;
+    font-size: 2.8em; /* Veći naslov */
+    font-weight: 700; /* Boldaniji naslov */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-header.page-header .slogan,
 .main-content-area > header .slogan {
     font-style: italic;
-    font-size: 1.1em;
-    opacity: 0.9;
+    font-size: 1.3em; /* Veći slogan */
+    opacity: 0.95;
+    margin-top: 0;
+    color: #f0e6d2; /* Svjetlija boja za slogan */
 }
 
 /* ==========================================================================
@@ -91,24 +98,68 @@ header.page-header .slogan,
    ========================================================================== */
 main {
     padding: 25px 20px;
-    background-color: #ffffff; /* White background for content sections */
+    background-color: #fdfaf6; /* Vrlo svijetla krem pozadina za glavni sadržaj */
     flex-grow: 1; /* Ensures main takes up space before footer */
 }
 
-section {
+/* Specifično stiliziranje sekcija na index.html */
+.main-content-area main section {
     margin-bottom: 30px;
-    padding: 20px;
-    background-color: #f9f9f9; /* Slightly off-white for sections */
+    padding: 25px; /* Više paddinga unutar sekcija */
+    background-color: #ffffff; /* Bijela pozadina za sekcije */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Malo jača sjena */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-section h2 {
+.main-content-area main section:hover {
+    transform: translateY(-5px); /* Blagi efekt podizanja na hover */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.main-content-area main section h2 { /* Općenito za h2 unutar sekcija glavnog sadržaja */
     color: #d2691e;
     margin-bottom: 15px;
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 8px;
+    font-size: 1.8em; /* Veći podnaslovi */
 }
+/* Ako želiš da h2 izvan .main-content-area (npr. direktno u main na drugim stranicama) ima drugačiji stil: */
+main > h2 { /* Ovo će ciljati h2 direktno u main, npr. na narudzbe.html */
+    color: #d2691e;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2em;
+}
+
+
+/* Stil za listu ponude na index.html */
+.main-content-area main section ul {
+    list-style: none; /* Uklanjamo defaultne točkice */
+    padding-left: 0;
+}
+
+.main-content-area main section ul li {
+    padding: 8px 0 8px 25px; /* Padding za razmak i mjesto za ikonicu */
+    position: relative;
+    font-size: 1.1em;
+    border-bottom: 1px dashed #eee; /* Suptilna crta između stavki */
+}
+
+.main-content-area main section ul li:last-child {
+    border-bottom: none; /* Uklanjamo crtu s zadnje stavke */
+}
+
+.main-content-area main section ul li::before {
+    content: "🥖"; /* Emoji kao "bullet point" - možeš promijeniti */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #d2691e;
+}
+
 
 /* ==========================================================================
    Footer
@@ -126,105 +177,56 @@ footer {
 }
 
 /* ==========================================================================
-   Navigation (.nav class) - Common Styles
+   Navigation (.nav class) - Common Styles for Desktop Sidebar
    ========================================================================== */
-.nav {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff; /* Default for top navigation */
-    border-bottom: 1px solid #e0e0e0; /* Subtle separator */
-    position: relative; /* For potential dropdowns or hamburger positioning */
-    z-index: 900;
-}
-
-.nav__logo {
-    font-size: 1.6em;
-    font-weight: 700;
-    color: #333; /* Dark text for logo on light background */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-logo-img {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%; /* Circular logo image */
-    object-fit: cover;
-}
-
-.nav__hamburger {
-    display: none; /* Hidden by default, shown via media query */
-    cursor: pointer;
-    margin-left: auto; /* Pushes hamburger to the right if menu is hidden */
-}
-
-.nav__hamburger__line {
-    display: block;
-    width: 28px;
-    height: 3px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: all 0.3s ease-in-out;
-}
-
-.nav__menu {
-    margin-left: auto; /* Pushes menu to the right for top nav */
-}
-
-.nav__menu ul {
-    display: flex; /* Horizontal layout for top nav */
-    gap: 10px;
-}
-
-.nav__menu__link a {
-    padding: 10px 15px;
-    font-weight: 500;
-    color: #555;
-    border-radius: 5px;
-    transition: background-color 0.25s ease, color 0.25s ease;
-    display: block;
-}
-
-.nav__menu__link a:hover,
-.nav__menu__link a.active { /* For top navigation */
-    background-color: #f0f0f0;
-    color: #d2691e;
-}
-
-/* ==========================================================================
-   Aside (Sidebar) Navigation - Specific Styles
-   ========================================================================== */
-aside {
-    flex: 0 0 240px; /* Fixed width for the sidebar */
-    background-color: #2c3e50; /* Dark blue/gray for sidebar */
-    color: #ecf0f1; /* Light text color for sidebar */
-    display: flex; /* To allow .nav to fill height */
-    flex-direction: column;
-}
-
+/* Stilovi za .nav unutar <aside> (desktop sidebar) */
 aside .nav {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start (left) */
-    padding: 20px 15px; /* Padding inside the sidebar nav */
-    background-color: transparent; /* Inherits from aside */
+    align-items: flex-start;
+    padding: 20px 15px;
+    background-color: transparent; /* Nasljeđuje od aside */
     border-bottom: none;
-    height: 100%; /* Fill the height of aside */
+    height: 100%;
+    position: relative; /* Za potencijalne dropdownove ili hamburger pozicioniranje */
+    z-index: 900; /* Niži od mobilne navigacije i footera */
 }
 
 aside .nav__logo {
+    font-size: 1.7em; /* Povećana veličina fonta za logo u sidebar-u */
+    font-weight: 700;
     color: #ecf0f1; /* Light logo text */
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
     padding-bottom: 15px;
     margin-bottom: 15px;
     border-bottom: 1px solid #34495e; /* Slightly darker separator */
-    font-size: 1.4em; /* Slightly smaller logo in sidebar */
 }
 
 aside .nav-logo-img {
-    height: 35px;
-    width: 35px;
+    height: 45px; /* Povećana visina slike loga */
+    width: 45px;  /* Povećana širina slike loga */
+    border-radius: 50%; /* Circular logo image */
+    object-fit: cover;
+}
+
+/* Hamburger za desktop sidebar - može se sakriti ako nije potreban */
+aside .nav__hamburger {
+    display: none; /* Sakrij ako ne koristiš hamburger na desktop sidebar-u */
+    /* Ako ga koristiš, stiliziraj ga ovdje */
+    cursor: pointer;
+    /* margin-left: auto; */ /* Ako je potrebno */
+}
+
+aside .nav__hamburger__line {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #ecf0f1; /* Svijetla boja za tamnu pozadinu */
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out;
 }
 
 aside .nav__menu {
@@ -233,18 +235,20 @@ aside .nav__menu {
 }
 
 aside .nav__menu ul {
+    display: flex;
     flex-direction: column; /* Vertical links */
     width: 100%;
     gap: 5px; /* Space between links */
 }
 
 aside .nav__menu__link a {
-    color: #bdc3c7; /* Lighter gray for links */
-    padding: 10px 15px; /* Slightly reduced padding */
+    padding: 10px 15px;
     font-weight: 400;
-    position: relative;
+    color: #bdc3c7; /* Lighter gray for links */
     border-radius: 4px;
     transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+    display: block;
+    position: relative;
 }
 
 aside .nav__menu__link a:hover,
@@ -261,11 +265,22 @@ aside .nav__menu__link a.active::before {
     left: 0;
     top: 0;
     bottom: 0; /* Full height */
-    margin: auto 0; /* Vertical centering if height is not 100% */
+    margin: auto 0;
     height: 100%;
     width: 5px;
     background-color: #d2691e; /* Accent color bar */
     border-radius: 0 3px 3px 0; /* Rounded on the right */
+}
+
+/* ==========================================================================
+   Aside (Sidebar) Element
+   ========================================================================== */
+aside {
+    flex: 0 0 240px; /* Fixed width for the sidebar */
+    background-color: #2c3e50; /* Dark blue/gray for sidebar */
+    color: #ecf0f1; /* Light text color for sidebar */
+    display: flex; /* To allow .nav to fill height */
+    flex-direction: column;
 }
 
 /* ==========================================================================
@@ -323,178 +338,6 @@ button.btn:hover {
 form button:active,
 button.btn:active {
     transform: scale(0.98); /* Slight press effect */
-}
-
-/* ==========================================================================
-   Animations
-   ========================================================================== */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-    animation: fadeIn 0.8s ease-out;
-}
-
-/* ==========================================================================
-   Media Queries (Placeholder for responsiveness)
-   ========================================================================== */
-/*
-@media (max-width: 768px) {
-    .nav__menu {
-        display: none; // Hide menu on small screens
-        // Further styles to make it a dropdown or off-canvas
-    }
-    .nav__hamburger {
-        display: block; // Show hamburger
-    }
-    aside {
-        // Behavior for sidebar on small screens, e.g., hide or make it overlay
-    }
-    .wrapper {
-        flex-direction: column; // Stack sidebar and content
-    }
-}
-*/
-
-/* ==========================================================================
-   Media Queries (Responsive Navigation)
-   ========================================================================== */
-   @media (max-width: 768px) {
-    /* Layout promjene */
-    .wrapper {
-        flex-direction: column; /* Stacks aside (nav) and main-content-area */
-    }
-
-    aside {
-        flex: 0 0 auto; /* Sidebar više nije fiksne širine, prilagođava se sadržaju */
-        width: 100%;
-        height: auto; /* Visina se prilagođava sadržaju */
-        background-color: #ffffff; /* Svijetla pozadina kao za gornju traku */
-        color: #333; 
-        position: sticky; /* Navigacija ostaje na vrhu pri skrolanju */
-        top: 0;
-        /* left: 0; nije nužno za sticky ako je width: 100% */
-        z-index: 1001; /* Malo viši z-index od footera */
-        /* --- DEBUG STYLES --- */
-        /* border: 2px solid red !important; */ /* Privremeno za provjeru vidljivosti */
-    }
-
-    aside .nav {
-        flex-direction: row; /* Vraća navigaciju u horizontalni mod */
-        align-items: center;
-        padding: 0 15px; /* Prilagođen padding za gornju traku */
-        min-height: 60px; /* Fiksna minimalna visina za gornju traku */
-        border-bottom: 1px solid #e0e0e0; /* Standardna granica */
-    }
-
-    aside .nav__logo {
-        color: #333; /* Tamni tekst loga */
-        font-size: 1.6em; /* Veličina kao za gornju traku */
-        padding-bottom: 0;
-        margin-bottom: 0;
-        border-bottom: none;
-    }
-
-    aside .nav-logo-img {
-        height: 35px; /* Prilagođena veličina za gornju traku */
-        width: 35px; 
-    }
-
-    /* Hamburger meni */
-    .nav__hamburger {
-        display: flex; /* Prikazujemo hamburger */
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 25px; /* Visina hamburgera */
-        margin-left: auto; /* Gura ga desno */
-        cursor: pointer;
-        order: 3; /* Da bude nakon loga i potencijalno menija */
-        z-index: 1002; /* Osigurava da je hamburger iznad svega unutar nav */
-        /* --- DEBUG STYLES --- */
-        /* background-color: yellow !important; */ /* Privremeno za provjeru vidljivosti */
-    }
-
-    .nav__hamburger__line {
-        width: 100%;
-        height: 3px;
-        background-color: #333; /* Boja linija hamburgera */
-        border-radius: 2px;
-        transition: all 0.3s linear;
-    }
-
-    aside .nav__menu {
-        display: none; /* Sakrivamo meni po defaultu */
-        position: absolute;
-        top: 60px; /* Ispod navigacijske trake (visina .nav) */
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-        padding: 0;
-        z-index: 1001; /* Treba biti iznad sadržaja, ali ispod hamburgera ako je otvoren preko njega */
-    }
-
-    aside .nav__menu.nav-menu--open { /* Klasa koju dodaje JS */
-        display: block;
-    }
-
-    aside .nav__menu ul {
-        flex-direction: column; /* Linkovi se slažu vertikalno */
-        width: 100%;
-        gap: 0;
-    }
-
-    aside .nav__menu__link a {
-        color: #555; /* Standardna boja linka za gornju traku */
-        padding: 15px 20px; /* Veći padding za lakši dodir */
-        border-bottom: 1px solid #f0f0f0; /* Separator između linkova */
-        display: block; /* Da zauzme punu širinu */
-    }
-    aside .nav__menu__link:last-child a {
-        border-bottom: none;
-    }
-
-    aside .nav__menu__link a:hover,
-    aside .nav__menu__link a.active {
-        background-color: #f0f0f0; /* Standardni hover za gornju traku */
-        color: #d2691e;
-        padding-left: 20px; /* Održavamo padding */
-    }
-
-    aside .nav__menu__link a::before {
-        display: none; /* Sakrivamo lijevu traku od bočne navigacije na mobitelu */
-    }
-
-    .main-content-area {
-        /* margin-top: 60px; Nije potrebno ako je aside sticky i dio normalnog toka */
-        padding-top: 0; /* Resetiramo padding ako je bio dodan */ 
-    }
-
-    /* Ako je footer fiksan, možda ga treba prilagoditi na mobitelu */
-    /* footer { position: static; } */
-}
-
-/* Mobilna navigacija - skrivena po defaultu (na desktopu) */
-.nav-mobile {
-    display: none;
-}
-@media (max-width: 768px) {
-
-    /* Sakrivamo desktop sidebar navigaciju (unutar .wrapper > aside) */
-    .wrapper aside {
-        display: none;
-    }
-
-    /* Prikazujemo mobilnu navigaciju (.nav-mobile) */
-    .nav-mobile {
-        display: flex; /* Ili block, ovisno o tome kako želiš da se elementi unutar nje ponašaju */
-        /* ... ostali stilovi za .nav-mobile koje smo već definirali ... */
-    }
-
-    /* ... ostali stilovi za elemente unutar .nav-mobile ... */
 }
 
 /* ==========================================================================
@@ -574,4 +417,174 @@ button.btn:active {
 .total-price-container #totalPriceDisplay {
     font-weight: bold;
     color: #d2691e; /* Boja pekare za iznos */
+}
+
+/* ==========================================================================
+   Stranica Proizvoda
+   ========================================================================== */
+.product-list {
+    list-style: none;
+    padding-left: 0;
+    display: grid; /* Koristimo grid za bolji raspored */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responzivne kolone */
+    gap: 25px; /* Razmak između proizvoda */
+}
+
+.product-list li {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex; /* Za poravnanje slike i teksta */
+    flex-direction: column; /* Slažemo sliku iznad teksta */
+    align-items: center; /* Centriramo sadržaj */
+    text-align: center; /* Centriramo tekst */
+}
+
+.product-list img {
+    width: 150px;  /* Fiksna širina slike */
+    height: 150px; /* Fiksna visina slike */
+    object-fit: cover; /* Osigurava da slika pokrije područje bez izobličenja */
+    border-radius: 6px; /* Blago zaobljeni rubovi slike */
+    margin-bottom: 15px; /* Razmak ispod slike */
+    border: 1px solid #f0f0f0; /* Suptilna granica oko slike */
+}
+
+.product-list strong { /* Naziv proizvoda */
+    font-size: 1.2em;
+    color: #d2691e; /* Boja pekare */
+    margin-bottom: 8px;
+    display: block; /* Da zauzme cijelu širinu i omogući marginu */
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* ==========================================================================
+   Mobilna Navigacija (.nav-mobile) - Skrivena na desktopu
+   ========================================================================== */
+.nav-mobile {
+    display: none; /* Skrivena po defaultu */
+}
+
+/* ==========================================================================
+   Media Queries (Responsive Design)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* Sakrivamo desktop sidebar navigaciju (unutar .wrapper > aside) */
+    .wrapper aside {
+        display: none;
+    }
+
+    /* Prikazujemo i stiliziramo mobilnu navigaciju (.nav-mobile) */
+    .nav-mobile {
+        display: flex; /* Prikazujemo mobilnu navigaciju */
+        align-items: center;
+        width: 100%;
+        min-height: 60px;
+        background-color: #ffffff;
+        color: #333;
+        position: sticky;
+        top: 0;
+        z-index: 1001; /* Iznad footera (koji je z-index: 1000) */
+        padding: 0 15px;
+        border-bottom: 1px solid #e0e0e0;
+        justify-content: flex-start; /* Gura hamburger skroz lijevo */
+    }
+
+    /* Logo je uklonjen iz mobilne navigacije, pa ne trebamo stilove za .nav-mobile .nav__logo */
+    /* .nav-mobile .nav-logo-img je također nepotreban */
+
+    .nav-mobile .nav__hamburger { /* Ciljamo specifično mobilni hamburger */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        /* margin-right: auto;  Ovo bi ga gurnulo lijevo ako ima drugih elemenata desno, ali justify-content: flex-start; na roditelju je bolje rješenje */
+        cursor: pointer;
+        order: 3; /* Ako bi bilo drugih elemenata, ovo bi ga gurnulo na kraj */
+        z-index: 1002; /* Iznad padajućeg menija */
+    }
+
+    .nav-mobile .nav__hamburger__line {
+        width: 100%;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+        transition: all 0.3s linear;
+    }
+
+    .nav-mobile .nav__menu { /* Ciljamo specifično mobilni meni */
+        display: none; /* Sakriven po defaultu, JS ga otvara */
+        position: absolute;
+        top: 60px; /* Visina .nav-mobile */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        padding: 0;
+        z-index: 1001; /* Ispod hamburgera, ali iznad ostatka stranice */
+    }
+
+    .nav-mobile .nav__menu.nav-menu--open { /* Klasa koju dodaje JS za otvaranje */
+        display: block;
+    }
+
+    .nav-mobile .nav__menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-mobile .nav__menu__link a {
+        color: #555;
+        padding: 10px 15px; /* Smanjen padding */
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+        font-size: 0.95em; /* Malo smanjen font */
+        text-align: center; /* Centriramo tekst linkova */
+    }
+
+    .nav-mobile .nav__menu__link:last-child a {
+        border-bottom: none;
+    }
+
+    .nav-mobile .nav__menu__link a:hover,
+    .nav-mobile .nav__menu__link a.active {
+        background-color: #f0f0f0;
+        color: #d2691e;
+        padding-left: 15px; /* Usklađeno s paddingom */
+    }
+
+    /* Osiguravamo da se ::before pseudo-element (ako postoji) ne prikazuje na mobilnim linkovima */
+    .nav-mobile .nav__menu__link a::before {
+        display: none;
+    }
+
+    .main-content-area {
+        padding-top: 0; /* Resetiramo padding ako je bio dodan zbog prethodnih pokušaja */
+        padding-bottom: 70px; /* Osiguravamo da ima mjesta za fiksni footer i na mobitelu */
+    }
+
+    /* Ako želiš da footer nije fiksan na mobitelu: */
+    /*
+    footer {
+        position: static;
+    }
+    .main-content-area {
+        padding-bottom: 20px; // Manji padding ako footer nije fiksan
+    }
+    */
 }
