@@ -20,6 +20,7 @@
     <div class="nav__menu nav-mobile__menu">
         <ul>
             <li class="nav__menu__link"><a href="index.html">Početna</a></li>
+            <li class="nav__menu__link"><a href="proizvodi.html">Proizvodi</a></li>
             <li class="nav__menu__link"><a href="narudzbe.html" class="active">Narudžbe</a></li>
             <li class="nav__menu__link"><a href="povijest.html">Naša povijest</a></li>
         </ul>
@@ -39,6 +40,7 @@
         <div class="nav__menu">
           <ul>
             <li class="nav__menu__link"><a href="index.html">Početna</a></li>
+            <li class="nav__menu__link"><a href="proizvodi.html">Proizvodi</a></li>
             <li class="nav__menu__link"><a href="narudzbe.html" class="active">Narudžbe</a></li>
             <li class="nav__menu__link"><a href="povijest.html">Naša povijest</a></li>
           </ul>
@@ -53,19 +55,116 @@
           <input type="text" id="ime" name="ime" required>
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
-          <label for="proizvod">Odaberite proizvod:</label>
-          <select id="proizvod" name="proizvod">
-            <option>Smrznuti bijeli kruh</option>
-            <option>Integralni kruh</option>
-            <option>Peciva s punjenjem</option>
-            <option>Kroasani</option>
-          </select>
-          <label for="kolicina">Količina:</label>
-          <input type="number" id="kolicina" name="kolicina" min="1" required>
+
+          <fieldset class="proizvodi-fieldset">
+            <legend>Odaberite proizvode:</legend>
+            <!-- Proizvodi preuzeti s proizvodi.html -->
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_forneti" name="proizvod_forneti" value="Forneti" data-price="0.30" class="product-checkbox">
+              <label for="proizvod_forneti">Forneti (0.30€/kom)</label>
+              <label for="kolicina_forneti" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_forneti" name="kolicina_forneti" min="0" value="0" class="product-quantity" data-product-id="proizvod_forneti">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_kroasan_cokolada" name="proizvod_kroasan_cokolada" value="Kroasan (čokoladni)" data-price="0.60" class="product-checkbox">
+              <label for="proizvod_kroasan_cokolada">Kroasan (čokoladni) (0.60€/kom)</label>
+              <label for="kolicina_kroasan_cokolada" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_kroasan_cokolada" name="kolicina_kroasan_cokolada" min="0" value="0" class="product-quantity" data-product-id="proizvod_kroasan_cokolada">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_krafna_marmelada" name="proizvod_krafna_marmelada" value="Krafna (pekmez)" data-price="0.50" class="product-checkbox">
+              <label for="proizvod_krafna_marmelada">Krafna (pekmez) (0.50€/kom)</label>
+              <label for="kolicina_krafna_marmelada" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_krafna_marmelada" name="kolicina_krafna_marmelada" min="0" value="0" class="product-quantity" data-product-id="proizvod_krafna_marmelada">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_buhtla" name="proizvod_buhtla" value="Buhtla" data-price="0.50" class="product-checkbox">
+              <label for="proizvod_buhtla">Buhtla (0.50€/kom)</label>
+              <label for="kolicina_buhtla" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_buhtla" name="kolicina_buhtla" min="0" value="0" class="product-quantity" data-product-id="proizvod_buhtla">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_kifla_sa_sirom" name="proizvod_kifla_sa_sirom" value="Kifla sa sirom" data-price="0.50" class="product-checkbox">
+              <label for="proizvod_kifla_sa_sirom">Kifla sa sirom (0.50€/kom)</label>
+              <label for="kolicina_kifla_sa_sirom" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_kifla_sa_sirom" name="kolicina_kifla_sa_sirom" min="0" value="0" class="product-quantity" data-product-id="proizvod_kifla_sa_sirom">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_lisnato_hrenovka" name="proizvod_lisnato_hrenovka" value="Lisnato s hrenovkom" data-price="0.70" class="product-checkbox">
+              <label for="proizvod_lisnato_hrenovka">Lisnato s hrenovkom (0.70€/kom)</label>
+              <label for="kolicina_lisnato_hrenovka" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_lisnato_hrenovka" name="kolicina_lisnato_hrenovka" min="0" value="0" class="product-quantity" data-product-id="proizvod_lisnato_hrenovka">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_pizza_trokut" name="proizvod_pizza_trokut" value="Pizza trokut" data-price="1.20" class="product-checkbox">
+              <label for="proizvod_pizza_trokut">Pizza trokut (1.20€/kom)</label>
+              <label for="kolicina_pizza_trokut" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_pizza_trokut" name="kolicina_pizza_trokut" min="0" value="0" class="product-quantity" data-product-id="proizvod_pizza_trokut">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_burek_meso" name="proizvod_burek_meso" value="Burek (meso)" data-price="1.80" class="product-checkbox">
+              <label for="proizvod_burek_meso">Burek (meso) (1.80€/kom)</label>
+              <label for="kolicina_burek_meso" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_burek_meso" name="kolicina_burek_meso" min="0" value="0" class="product-quantity" data-product-id="proizvod_burek_meso">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_bijela_kifla" name="proizvod_bijela_kifla" value="Bijela kifla" data-price="0.40" class="product-checkbox">
+              <label for="proizvod_bijela_kifla">Bijela kifla (0.40€/kom)</label>
+              <label for="kolicina_bijela_kifla" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_bijela_kifla" name="kolicina_bijela_kifla" min="0" value="0" class="product-quantity" data-product-id="proizvod_bijela_kifla">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_pecivo_sa_sjemenkama" name="proizvod_pecivo_sa_sjemenkama" value="Pecivo sa sjemenkama" data-price="0.40" class="product-checkbox">
+              <label for="proizvod_pecivo_sa_sjemenkama">Pecivo sa sjemenkama (0.40€/kom)</label>
+              <label for="kolicina_pecivo_sa_sjemenkama" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_pecivo_sa_sjemenkama" name="kolicina_pecivo_sa_sjemenkama" min="0" value="0" class="product-quantity" data-product-id="proizvod_pecivo_sa_sjemenkama">
+            </div>
+             <!-- Forneti su već gore, ovaj je dupli, uklanjam ga
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_forneti_dupli" name="proizvod_forneti_dupli" value="Forneti" data-price="0.30" class="product-checkbox">
+              <label for="proizvod_forneti_dupli">Forneti (0.30€/kom)</label>
+              <label for="kolicina_forneti_dupli" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_forneti_dupli" name="kolicina_forneti_dupli" min="0" value="0" class="product-quantity" data-product-id="proizvod_forneti_dupli">
+            </div>
+            -->
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_savijaca_visnja" name="proizvod_savijaca_visnja" value="Savijača s višnjama" data-price="0.60" class="product-checkbox">
+              <label for="proizvod_savijaca_visnja">Savijača s višnjama (0.60€/kom)</label>
+              <label for="kolicina_savijaca_visnja" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_savijaca_visnja" name="kolicina_savijaca_visnja" min="0" value="0" class="product-quantity" data-product-id="proizvod_savijaca_visnja">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_sendvic_sunka_sir" name="proizvod_sendvic_sunka_sir" value="Sendvič sa šunkom i sirom" data-price="1.50" class="product-checkbox">
+              <label for="proizvod_sendvic_sunka_sir">Sendvič sa šunkom i sirom (1.50€/kom)</label>
+              <label for="kolicina_sendvic_sunka_sir" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_sendvic_sunka_sir" name="kolicina_sendvic_sunka_sir" min="0" value="0" class="product-quantity" data-product-id="proizvod_sendvic_sunka_sir">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_mini_pizze" name="proizvod_mini_pizze" value="Mini pizze" data-price="1.00" class="product-checkbox">
+              <label for="proizvod_mini_pizze">Mini pizze (1.00€/kom)</label>
+              <label for="kolicina_mini_pizze" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_mini_pizze" name="kolicina_mini_pizze" min="0" value="0" class="product-quantity" data-product-id="proizvod_mini_pizze">
+            </div>
+            <div class="product-item">
+              <input type="checkbox" id="proizvod_cvarkusa" name="proizvod_cvarkusa" value="Čvarkuša" data-price="0.70" class="product-checkbox">
+              <label for="proizvod_cvarkusa">Čvarkuša (0.70€/kom)</label>
+              <label for="kolicina_cvarkusa" class="kolicina-label">Količina:</label>
+              <input type="number" id="kolicina_cvarkusa" name="kolicina_cvarkusa" min="0" value="0" class="product-quantity" data-product-id="proizvod_cvarkusa">
+            </div>
+          </fieldset>
+
           <label for="adresa">Adresa za dostavu:</label>
           <textarea id="adresa" name="adresa" required></textarea>
           <label for="napomena">Dodatna napomena:</label>
           <textarea id="napomena" name="message"></textarea>
+
+          <div class="total-price-container">
+            <h3>Ukupna cijena: <span id="totalPriceDisplay">0.00</span> €</h3>
+          </div>
+
+          <!-- Skriveno polje za ukupnu cijenu koje će se slati s formom -->
+          <input type="hidden" name="ukupna_cijena" id="ukupnaCijenaInput" value="0.00">
+
           <button type="submit">Pošalji narudžbu</button>
         </form>
       </main>

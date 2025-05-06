@@ -496,3 +496,82 @@ button.btn:active {
 
     /* ... ostali stilovi za elemente unutar .nav-mobile ... */
 }
+
+/* ==========================================================================
+   Forma za Narudžbe - Specifični Stilovi
+   ========================================================================== */
+
+.proizvodi-fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.proizvodi-fieldset legend {
+    font-weight: bold;
+    color: #d2691e; /* Boja pekare */
+    padding: 0 10px;
+}
+
+.product-item {
+    display: grid;
+    /* Grid kolone: checkbox, naziv proizvoda (zauzima ostatak prostora), labela "Količina:", input za količinu */
+    grid-template-columns: auto 1fr auto auto; 
+    gap: 10px; /* Razmak između elemenata u retku */
+    align-items: center; /* Vertikalno poravnanje elemenata */
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee; /* Suptilna linija između proizvoda */
+}
+.product-item:last-child {
+    border-bottom: none; /* Uklanjamo liniju s zadnjeg proizvoda */
+}
+
+/* Stil za checkbox */
+.product-item .product-checkbox {
+    margin-right: 5px; /* Mali razmak desno od checkboxa */
+}
+
+/* Stil za labelu proizvoda */
+.product-item label[for^="proizvod_"] { /* Cilja labele koje počinju s "proizvod_" */
+    font-size: 1em;
+    color: #333;
+}
+
+/* Stil za labelu "Količina:" */
+.product-item .kolicina-label {
+    font-size: 0.9em;
+    color: #555;
+    margin-left: 10px; /* Razmak lijevo od labele "Količina:" */
+}
+
+/* Stil za input polje za količinu */
+.product-item .product-quantity {
+    width: 70px; /* Manja širina za polje količine */
+    padding: 8px;
+    text-align: center; /* Centriramo broj u polju */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Kontejner za prikaz ukupne cijene */
+.total-price-container {
+    margin-top: 25px; /* Razmak iznad prikaza cijene */
+    margin-bottom: 20px; /* Razmak ispod prikaza cijene */
+    padding: 15px 20px;
+    background-color: #f9f9f9; /* Svjetla pozadina */
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    text-align: right; /* Poravnavamo tekst desno */
+}
+
+.total-price-container h3 {
+    margin: 0;
+    font-size: 1.3em; /* Malo veći font za ukupnu cijenu */
+    color: #333;
+}
+
+.total-price-container #totalPriceDisplay {
+    font-weight: bold;
+    color: #d2691e; /* Boja pekare za iznos */
+}

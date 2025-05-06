@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruđerovci - Proizvodi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Mobilna Navigacija (skrivena na desktopu) -->
+    <nav class="nav nav-mobile">
+        <!-- Logo je uklonjen iz mobilne navigacije -->
+        <a href="#" class="nav__hamburger nav-mobile__hamburger">
+            <span class="nav__hamburger__line"></span>
+            <span class="nav__hamburger__line"></span>
+            <span class="nav__hamburger__line"></span>
+        </a>
+        <div class="nav__menu nav-mobile__menu">
+            <ul>
+                <li class="nav__menu__link"><a href="index.html">Početna</a></li>
+                <li class="nav__menu__link"><a href="proizvodi.html">Proizvodi</a></li>
+                <li class="nav__menu__link"><a href="narudzbe.html">Narudžbe</a></li>
+                <li class="nav__menu__link"><a href="povijest.html" class="active">Naša povijest</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Desktop Layout -->
+    <div class="wrapper">
+        <aside>
+            <nav class="nav"> <!-- Desktop Sidebar Navigacija -->
+                <div class="nav__logo"><img src="Slike/logo2.png" alt="Logo" class="nav-logo-img"> Ruđerovci</div>
+                <a href="#" class="nav__hamburger">
+                  <span class="nav__hamburger__line"></span>
+                  <span class="nav__hamburger__line"></span>
+                  <span class="nav__hamburger__line"></span>
+                </a>
+                <div class="nav__menu">
+                  <ul>
+                    <li class="nav__menu__link"><a href="index.html">Početna</a></li>
+                    <li class="nav__menu__link"><a href="proizvodi.html" class="active">Proizvodi</a></li>
+                    <li class="nav__menu__link"><a href="narudzbe.html">Narudžbe</a></li>
+                    <li class="nav__menu__link"><a href="povijest.html">Naša povijest</a></li>
+                  </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="main-content-area">
+            <header class="fade-in">
+                <img src="Slike/logo.png" alt="Ruđerovci logo" class="logo page-header-logo">
+                <h1>Naši proizvodi</h1>
+                <p class="slogan">Okusi domaće pekare na dohvat ruke.</p>
+            </header>
+
+            <main class="fade-in">
+                <section>
+                    <ul class="product-list">
+                        <li><img src="Slike/Proizvodi/forneti.jpg" alt="Forneti"> <strong>Forneti:</strong> 0.30€/kom<br>Mali lisnati zalogaji punjeni sirom, pizzom ili čokoladom.</li>
+                        <li><img src="Slike/Proizvodi/kroasan_cokolada.jpg" alt="Kroasan"> <strong>Kroasan (čokoladni):</strong> 0.60€/kom<br>Mekano, maslacem bogato lisnato pecivo punjeno čokoladom.</li>
+                        <li><img src="Slike/Proizvodi/krafna_marmelada.jpg" alt="Krafna"> <strong>Krafna (pekmez):</strong> 0.50€/kom<br>Prženo slatko pecivo punjeno marmeladom, posipano šećerom.</li>
+                        <li><img src="Slike/Proizvodi/buhtla.jpg" alt="Buhtla"> <strong>Buhtla:</strong> 0.50€/kom<br>Mekano slatko pecivo punjeno pekmezom ili čokoladom.</li>
+                        <li><img src="Slike/Proizvodi/kifla_sa_sirom.jpg" alt="Kifla sa sirom"> <strong>Kifla sa sirom:</strong> 0.50€/kom<br>Pecivo u obliku polumjeseca, punjeno svježim sirom.</li>
+                        <li><img src="Slike/Proizvodi/lisnato_hrenovka.jpg" alt="Lisnato s hrenovkom"> <strong>Lisnato s hrenovkom:</strong> 0.70€/kom<br>Lisnato pecivo omotano oko hrenovke, pečeno do zlatnog savršenstva.</li>
+                        <li><img src="Slike/Proizvodi/trokut pizza.jpg" alt="Pizza trokut"> <strong>Pizza trokut:</strong> 1.20€/kom<br>Tijesto s umakom od rajčice, sirom i šunkom u obliku trokuta.</li>
+                        <li><img src="Slike/Proizvodi/burek_meso.jpg" alt="Burek"> <strong>Burek (meso):</strong> 1.80€/kom<br>Tradicionalno jelo od tankog tijesta punjeno mljevenim mesom.</li>
+                        <li><img src="Slike/Proizvodi/kifla.jpg" alt="Bijela kifla"> <strong>Bijela kifla:</strong> 0.40€/kom<br>Klasično bijelo pecivo, mekano i jednostavno.</li>
+                        <li><img src="Slike/Proizvodi/pecivo_sa_sjemenkama.jpg" alt="Pecivo sa sjemenkama"> <strong>Pecivo sa sjemenkama:</strong> 0.40€/kom<br>Hrskavo pecivo posuto sezamom, lanom i suncokretom.</li>
+                        <!-- Dupli forneti su uklonjeni -->
+                        <li><img src="Slike/Proizvodi/savijaca_od_visanje.jpg" alt="Savijača s višnjama"> <strong>Savijača s višnjama:</strong> 0.60€/kom<br>Tanko tijesto s nadjevom od kiselih višanja.</li>
+                        <li><img src="Slike/Proizvodi/sunka sir sendvic.jpg" alt="Sendvič sa šunkom i sirom"> <strong>Sendvič sa šunkom i sirom:</strong> 1.50€/kom<br>Svježe pecivo punjeno šunkom, sirom i povrćem.</li>
+                        <li><img src="Slike/Proizvodi/miniPizze.jpg" alt="Mini pizze"> <strong>Mini pizze:</strong> 1.00€/kom<br>Male pizze s rajčicom, sirom i šunkom – idealne za užinu.</li>
+                        <li><img src="Slike/Proizvodi/cvarkusa.jpg" alt="Čvarkuša"> <strong>Čvarkuša:</strong> 0.70€/kom<br>Slano, hrskavo tijesto s komadićima čvaraka, tipično za domaću kuhinju.</li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer class="fade-in">
+        <p>&copy; 2025 Ruđerovci. Sva prava pridržana.</p>
+    </footer>
+</body>
+</html>
