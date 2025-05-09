@@ -70,7 +70,7 @@ ul {
 }
 
 .main-content-area > header .logo {
-    height: 90px; /* Malo veći logo */
+    height: 150px; /* Malo veći logo */
     margin: 0 auto 20px auto; /* Centriran logo s više margine */
     background-color: rgba(255, 255, 255, 0.1); /* Suptilna pozadina za logo */
     border-radius: 50%;
@@ -139,26 +139,16 @@ main > h2 { /* Ovo će ciljati h2 direktno u main, npr. na narudzbe.html */
     padding-left: 0;
 }
 
-.main-content-area main section ul li {
-    padding: 8px 0 8px 25px; /* Padding za razmak i mjesto za ikonicu */
-    position: relative;
-    font-size: 1.1em;
-    border-bottom: 1px dashed #eee; /* Suptilna crta između stavki */
+.main-content-area section ul li {
+  list-style-type: disc;   /* Koristi standardnu točkastu oznaku (krug) */
+  list-style-image: none;  /* Uklanja bilo koju sliku koja se koristi kao oznaka */
 }
+
 
 .main-content-area main section ul li:last-child {
     border-bottom: none; /* Uklanjamo crtu s zadnje stavke */
 }
 
-.main-content-area main section ul li::before {
-    content: "🥖"; /* Emoji kao "bullet point" - možeš promijeniti */
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2em;
-    color: #d2691e;
-}
 
 
 /* ==========================================================================
@@ -588,3 +578,23 @@ button.btn:active {
     }
     */
 }
+
+/* Dodajte ovo na kraj vaše style.css datoteke ili na odgovarajuće mjesto */
+
+body.narudzbe-pozadina {
+  background-image: url('Slike/pozadina.png');
+  background-size: cover; /* Da prekrije cijelu pozadinu, prilagođavajući veličinu slike */
+  background-repeat: no-repeat; /* Da se slika ne ponavlja */
+  background-position: center center; /* Da slika bude centrirana */
+  background-attachment: fixed; /* Da se pozadina ne scrolla sa sadržajem (opcionalno) */
+}
+
+
+
+body.narudzbe-pozadina .main-content-area {
+   background-color: rgba(255, 255, 255, 0.88); /* Bijela pozadina s 88% neprozirnosti (malo prozirnija) */
+  padding: 25px; /* Malo veći padding za bolji izgled */
+  border-radius: 8px; /* Zaobljeni rubovi kao i prije */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Malo jača sjena za bolji kontrast */
+}
+

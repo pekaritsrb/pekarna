@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Saznajte više o povijesti Pekare Ruđerovci, našim lokacijama u Gornjem Hruševcu i na moru, te našoj posvećenosti tradiciji i kvaliteti pekarskih proizvoda.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Nama i Povijest Pekare Ruđerovci | Tradicija i Kvaliteta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Mobilna Navigacija (skrivena na desktopu) -->
+    <nav class="nav nav-mobile">
+        <!-- Logo je uklonjen iz mobilne navigacije -->
+        <a href="#" class="nav__hamburger nav-mobile__hamburger">
+            <span class="nav__hamburger__line"></span>
+            <span class="nav__hamburger__line"></span>
+            <span class="nav__hamburger__line"></span>
+        </a>
+        <div class="nav__menu nav-mobile__menu">
+            <ul>
+                <li class="nav__menu__link"><a href="index.html">Početna</a></li>
+                <li class="nav__menu__link"><a href="proizvodi.html">Proizvodi</a></li>
+                <li class="nav__menu__link"><a href="narudzbe.html">Narudžbe</a></li>
+                <li class="nav__menu__link"><a href="povijest.html" class="active">Naša povijest</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Desktop Layout -->
+    <div class="wrapper">
+        <aside>
+            <nav class="nav"> <!-- Desktop Sidebar Navigacija -->
+                <div class="nav__logo"><img src="Slike/logo2.svg" alt="Logo Pekare Ruđerovci" class="nav-logo-img"> Ruđerovci</div>
+                <a href="#" class="nav__hamburger">
+                  <span class="nav__hamburger__line"></span>
+                  <span class="nav__hamburger__line"></span>
+                  <span class="nav__hamburger__line"></span>
+                </a>
+                <div class="nav__menu">
+                  <ul>
+                    <li class="nav__menu__link"><a href="index.html">Početna</a></li>
+                    <li class="nav__menu__link"><a href="proizvodi.html">Proizvodi</a></li>
+                    <li class="nav__menu__link"><a href="narudzbe.html">Narudžbe</a></li>
+                    <li class="nav__menu__link"><a href="povijest.html" class="active">Naša povijest</a></li>
+                  </ul>
+                </div>
+            </nav>
+        </aside>
+        <div class="main-content-area">
+            <main class="fade-in">
+                <section>
+                    <h2>O nama</h2>
+                    <p>
+                        Pekarna Ruđerovci s ponosom posluje na dvije lokacije: u našoj tradicionalnoj pekari u srcu Gornjeg Hruševca, gdje njegujemo dugogodišnju kvalitetu, te u našoj novoj pekari smještenoj uz more. Naša priča započela je kao obiteljski posao s jasnom vizijom – pružiti vrhunske pekarske proizvode. Danas, osim što nudimo svježe delicije u našim pekarama, specijalizirani smo i za veleprodaju visokokvalitetnih smrznutih pekarskih proizvoda, dostupnih trgovinama diljem Hrvatske. Godine predanog rada i ulaganja u izvrsnost učinile su nas prepoznatljivim i pouzdanim partnerom.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Naša pekara</h2>
+                    <div style="text-align: center;">
+                        <img src="Slike/SlikaPekare.png" alt="Naša pekara Ruđerovci" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <p style="font-style: italic; margin-top: 10px;">Moderna oprema i tradicionalne recepture.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Naša ponuda</h2>
+                    <p>
+                        Specijalizirani smo za proizvodnju smrznutih pekarskih proizvoda koji su prilagođeni potrebama trgovina, supermarketa i manjih dućana. U našoj ponudi nalaze se:
+                    </p>
+                    <ul>
+                        <li>Kruh i peciva (bijeli, polubijeli, raženi, integralni)</li>
+                        <li>Zamrznuti lisnati proizvodi (croissanti, savijače, kifle)</li>
+                        <li>Slani i slatki snack proizvodi</li>
+                        <li>Personalizirani proizvodi prema narudžbi kupca</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Dostava i suradnja</h2>
+                    <p>
+                        Dostavu vršimo svakodnevno u sve dijelove Hrvatske putem vlastite hladnjače, osiguravajući da proizvodi do vašeg dućana stignu u savršenom stanju. Cijenimo pouzdanu suradnju i otvoreni smo za dugoročne partnerske odnose. Ako ste maloprodajni lanac ili lokalni dućan u potrazi za kvalitetnim pekarskim proizvodima — na pravom ste mjestu.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Pronađite nas 🗺️</h2>
+                    <p>Posjetite nas na našim lokacijama. Radujemo se vašem dolasku!</p>
+                    
+                    <h3 style="margin-top: 20px;">Gornji Hruševec</h3>
+                    <div class="map-container" style="margin-top: 10px; border-radius:8px; overflow: hidden;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.5699403617077!2d16.00414947222886!3d45.55897620495382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4766849f6626fcdd%3A0x7c500aa9899bb4e0!2s75%2F1%2C%2010413%2C%20Gornji%20Hru%C5%A1evec!5e0!3m2!1shr!2shr!4v1746558137813!5m2!1shr!2shr" width="100%" height="450" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Vantačići (Malinska)</h3>
+                    <div class="map-container" style="margin-top: 10px; border-radius:8px; overflow: hidden;">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2815.5032312114004!2d14.505898899999998!3d45.1161373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47636fc64dd5abbf%3A0x6b4203170033183f!2zUGxhxb5hIFZhbnRhxI1pxIdp!5e0!3m2!1shr!2shr!4v1746779657160!5m2!1shr!2shr" width="100%" height="450" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Kontakt</h2>s
+                    <p>
+                        Želite surađivati s nama ili zatražiti ponudu? Javite nam se:
+                    </p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;">📧 Email: <a href="mailto:info@ruderovci.hr">info@ruderovci.hr</a></li>
+                        <li style="margin-bottom: 10px;">📞 Telefon: <strong>+385 91 123 4567</strong></li>
+                        <li style="margin-bottom: 10px;">📍 Adresa: Gornji Kruševac (posjetite nas!)</li>
+                    </p>
+                </section>
+            </main>
+        </div> <!-- kraj .main-content-area -->
+    </div> <!-- kraj .wrapper -->
+
+    <footer class="fade-in">
+        <p>2025 Pekara Ruđerovci 2025 Tehnička škola Ruđera Boškovića</p>
+    </footer>
+</body>
+</html>
