@@ -154,8 +154,41 @@
             </div>
           </fieldset>
 
-          <label for="adresa">Adresa za dostavu:</label>
-          <textarea id="adresa" name="adresa" required></textarea>
+          <label for="ulica_kucni_broj">Ulica i kućni broj:</label>
+          <input type="text" id="ulica_kucni_broj" name="ulica_kucni_broj" required>
+
+          <label for="mjesto">Mjesto:</label>
+          <input type="text" id="mjesto" name="mjesto" required>
+
+          <label for="postanski_broj">Poštanski broj:</label>
+          <input type="text" id="postanski_broj" name="postanski_broj" pattern="[0-9]{5}" title="Unesite 5 znamenki poštanskog broja" required>
+
+          <label for="zupanija">Županija:</label>
+          <select id="zupanija" name="zupanija" required>
+            <option value="" disabled selected>Odaberite županiju</option>
+            <option value="Bjelovarsko-bilogorska">Bjelovarsko-bilogorska županija</option>
+            <option value="Brodsko-posavska">Brodsko-posavska županija</option>
+            <option value="Dubrovačko-neretvanska">Dubrovačko-neretvanska županija</option>
+            <option value="Istarska">Istarska županija</option>
+            <option value="Karlovačka">Karlovačka županija</option>
+            <option value="Koprivničko-križevačka">Koprivničko-križevačka županija</option>
+            <option value="Krapinsko-zagorska">Krapinsko-zagorska županija</option>
+            <option value="Ličko-senjska">Ličko-senjska županija</option>
+            <option value="Međimurska">Međimurska županija</option>
+            <option value="Osječko-baranjska">Osječko-baranjska županija</option>
+            <option value="Požeško-slavonska">Požeško-slavonska županija</option>
+            <option value="Primorsko-goranska">Primorsko-goranska županija</option>
+            <option value="Sisačko-moslavačka">Sisačko-moslavačka županija</option>
+            <option value="Splitsko-dalmatinska">Splitsko-dalmatinska županija</option>
+            <option value="Šibensko-kninska">Šibensko-kninska županija</option>
+            <option value="Varaždinska">Varaždinska županija</option>
+            <option value="Virovitičko-podravska">Virovitičko-podravska županija</option>
+            <option value="Vukovarsko-srijemska">Vukovarsko-srijemska županija</option>
+            <option value="Zadarska">Zadarska županija</option>
+            <option value="Zagrebačka">Zagrebačka županija</option>
+            <option value="Grad Zagreb">Grad Zagreb</option>
+          </select>
+
           <label for="napomena">Dodatna napomena:</label>
           <textarea id="napomena" name="message"></textarea>
 

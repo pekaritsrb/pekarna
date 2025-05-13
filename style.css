@@ -124,13 +124,6 @@ main {
     padding-bottom: 8px;
     font-size: 1.8em; /* Veći podnaslovi */
 }
-/* Ako želiš da h2 izvan .main-content-area (npr. direktno u main na drugim stranicama) ima drugačiji stil: */
-main > h2 { /* Ovo će ciljati h2 direktno u main, npr. na narudzbe.html */
-    color: #d2691e;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 2em;
-}
 
 
 /* Stil za listu ponude na index.html */
@@ -142,11 +135,6 @@ main > h2 { /* Ovo će ciljati h2 direktno u main, npr. na narudzbe.html */
 .main-content-area section ul li {
   list-style-type: disc;   /* Koristi standardnu točkastu oznaku (krug) */
   list-style-image: none;  /* Uklanja bilo koju sliku koja se koristi kao oznaka */
-}
-
-
-.main-content-area main section ul li:last-child {
-    border-bottom: none; /* Uklanjamo crtu s zadnje stavke */
 }
 
 
@@ -200,23 +188,6 @@ aside .nav-logo-img {
     width: 45px;  /* Povećana širina slike loga */
     border-radius: 50%; /* Circular logo image */
     object-fit: cover;
-}
-
-/* Hamburger za desktop sidebar - može se sakriti ako nije potreban */
-aside .nav__hamburger {
-    display: none; /* Sakrij ako ne koristiš hamburger na desktop sidebar-u */
-    /* Ako ga koristiš, stiliziraj ga ovdje */
-    cursor: pointer;
-    /* margin-left: auto; */ /* Ako je potrebno */
-}
-
-aside .nav__hamburger__line {
-    display: block;
-    width: 28px;
-    height: 3px;
-    background-color: #ecf0f1; /* Svijetla boja za tamnu pozadinu */
-    margin: 6px 0;
-    transition: all 0.3s ease-in-out;
 }
 
 aside .nav__menu {
@@ -292,7 +263,6 @@ form label {
 form input[type="text"],
 form input[type="number"],
 form input[type="email"],
-form input[type="password"],
 form textarea,
 form select {
     width: 100%;
@@ -504,7 +474,6 @@ button.btn:active {
         height: 25px;
         /* margin-right: auto;  Ovo bi ga gurnulo lijevo ako ima drugih elemenata desno, ali justify-content: flex-start; na roditelju je bolje rješenje */
         cursor: pointer;
-        order: 3; /* Ako bi bilo drugih elemenata, ovo bi ga gurnulo na kraj */
         z-index: 1002; /* Iznad padajućeg menija */
     }
 
@@ -597,4 +566,3 @@ body.narudzbe-pozadina .main-content-area {
   border-radius: 8px; /* Zaobljeni rubovi kao i prije */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Malo jača sjena za bolji kontrast */
 }
-
